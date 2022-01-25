@@ -1,12 +1,17 @@
 import React from "react";
 
-// const bulletize = (props) => {
-//     let i = 0;
-//     while(i<12) {
-//         props.number[i] ='•';
-//         i++;
-//     }
-// }
+const bulletize = (number) => {
+    let i = 0;
+    console.log(number.split(''));
+    let bulletizedNumber = number.split('');
+    while(i<12) {
+        bulletizedNumber[i] ='•';
+        i++;
+    }
+    console.log(bulletizedNumber.join(''));
+    number = bulletizedNumber.join('');
+    return number;
+}
 
 // const formatCardNumber = (props) => {
 //     let formattedCardNumber = [];
@@ -82,7 +87,7 @@ const CreditCard = (props) => {
                         padding: '2.5rem',
                     }}
                 >
-                    {bulletize(props)}
+                    {bulletize(props.number)}
                 </div>
                 <div className="NumberAndBank"
                     style={{
