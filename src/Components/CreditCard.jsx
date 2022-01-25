@@ -2,31 +2,32 @@ import React from "react";
 
 const bulletize = (number) => {
     let i = 0;
-    console.log(number.split(''));
+    //console.log(number.split(''));
     let bulletizedNumber = number.split('');
     while(i<12) {
         bulletizedNumber[i] ='•';
         i++;
     }
-    console.log(bulletizedNumber.join(''));
+    //console.log(bulletizedNumber.join(''));
     number = bulletizedNumber.join('');
     return number;
 }
 
-// const formatCardNumber = (props) => {
-//     let formattedCardNumber = [];
-    
-//         for (let i = 0; i < props.number.length; i++){
-//             if (j%4 === 0) {
-//                 formattedCardNumber.push(' ');
-//                 formattedCardNumber.push(props.number[i])
-//             } else {
-//                 formattedCardNumber.push(props.number[i])
-//             }
-//         }
-//         formattedCardNumber.join('');
-//         props.number = formattedCardNumber
-// }
+const formatCardNumber = (number) => {
+    let bulletized = bulletize(number);
+    let splittedNumber = bulletized.split('');
+    let formattedCardNumber = [];
+        for (let i = 0; i < number.length; i++){
+            if (i%4 === 0) {
+                formattedCardNumber.push(' ');
+                formattedCardNumber.push(splittedNumber[i])
+            } else {
+                formattedCardNumber.push(splittedNumber[i])
+            }
+        }
+        number = formattedCardNumber.join('');
+        return number;
+}
 
 const displayLogo = (props) => {
     let bankLogo;
@@ -82,12 +83,12 @@ const CreditCard = (props) => {
                         display: 'flex',
                         flexDirection: 'row',
                         justifyContent: 'center',
-                        fontSize: '2.2rem',
+                        fontSize: '2rem',
                         height: '3.5rem',
                         padding: '2.5rem',
                     }}
                 >
-                    {bulletize(props.number)}
+                    {formatCardNumber(props.number)}
                 </div>
                 <div className="NumberAndBank"
                     style={{
