@@ -22,7 +22,6 @@ const BoxColor = (props) => {
                 textAlign:'left',
                 margin:'1rem',
                 padding:'2rem',
-                textAlign:'center',
                 backgroundColor:`rgb(${rgbColorComponent(props)})`
             }}
         >

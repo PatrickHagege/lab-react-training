@@ -1,5 +1,27 @@
 import React from "react";
 
+// const bulletize = (props) => {
+//     let i = 0;
+//     while(i<12) {
+//         props.number[i] ='•';
+//         i++;
+//     }
+// }
+
+// const formatCardNumber = (props) => {
+//     let formattedCardNumber = [];
+    
+//         for (let i = 0; i < props.number.length; i++){
+//             if (j%4 === 0) {
+//                 formattedCardNumber.push(' ');
+//                 formattedCardNumber.push(props.number[i])
+//             } else {
+//                 formattedCardNumber.push(props.number[i])
+//             }
+//         }
+//         formattedCardNumber.join('');
+//         props.number = formattedCardNumber
+// }
 
 const displayLogo = (props) => {
     let bankLogo;
@@ -60,7 +82,7 @@ const CreditCard = (props) => {
                         padding: '2.5rem',
                     }}
                 >
-                    {props.number}
+                    {bulletize(props)}
                 </div>
                 <div className="NumberAndBank"
                     style={{
