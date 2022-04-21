@@ -51,8 +51,8 @@ const CreditCard = (props) => {
                 flexDirection: 'column',
                 margin: '1rem',
                 padding: '1rem',
-                width: '400px',
-                height: '250px'
+                width: '300px',
+                height: '180px'
             }}
         >
             {/* <pre>{JSON.stringify(props, null, 2)}</pre> */}
@@ -61,7 +61,7 @@ const CreditCard = (props) => {
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'left',
-                    padding: '1rem'
+                    margin: '1rem 0'
                 }}
             >
                 <div className="bankLogo"
@@ -76,7 +76,8 @@ const CreditCard = (props) => {
                         style={{
                             width: '60px',
                         }}
-                        src={displayLogo(props)} alt={props.bank} />
+                        src={displayLogo(props)} alt={props.bank}
+                    />
                 </div>
                 <div className="CreditCardNumber"
                     style={{
@@ -84,8 +85,9 @@ const CreditCard = (props) => {
                         flexDirection: 'row',
                         justifyContent: 'center',
                         fontSize: '2rem',
-                        height: '3.5rem',
-                        padding: '2.5rem',
+                        width:'100%',
+                        height: '3rem',
+                        padding: '2rem 0'
                     }}
                 >
                     {formatCardNumber(props.number)}
@@ -95,7 +97,8 @@ const CreditCard = (props) => {
                         display: 'flex',
                         flexDirection: 'row',
                         justifyContent: 'left',
-                        fontSize: '1.2rem'
+                        textAlign:'left',
+                        fontSize: '.9rem'
                     }}
                 >
                     <div className="CreditCardExpiration"
@@ -109,7 +112,15 @@ const CreditCard = (props) => {
                         {props.bank}
                     </div>
                 </div>
-                <div className="owner">{props.owner}</div>
+                <div
+                    className="owner"
+                    style={{
+                        fontSize:'.9rem',
+                        textAlign:'left'
+                    }}
+                >
+                    {props.owner}
+                </div>
             </div>
         </div>
     );

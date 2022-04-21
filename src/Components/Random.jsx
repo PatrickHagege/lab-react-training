@@ -5,7 +5,8 @@ const randomBetweenMinMax = function(min, max) {
 }
 
 const Random = (props) => {
-    console.log(props);
+    console.log('props.max',props.max);
+    console.log('props.min',props.min);
     return (
         <div className="random"
             style={{
