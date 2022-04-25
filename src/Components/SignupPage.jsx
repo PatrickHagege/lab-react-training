@@ -16,11 +16,11 @@ const SignupPage = () => {
 
 const greetings = () => {
     if (nationality==='en') {
-        return 'Hello'
+        return 'Hello dear english people'
     } else if (nationality==='de') {
-        return 'Hallo'
+        return 'Hallo mein freund'
     } else if (nationality==='fr') {
-        return 'Bonjour'
+        return 'Bonjour cher ami français'
     }   else {
         return 'Shalom'
     }
@@ -50,7 +50,7 @@ const greetings = () => {
                     setPassword(e.target.value)}
                 }
             />
-            <label htmlFor="nationality">Nationaliity</label>
+            <label htmlFor="nationality">Nationaliity : </label>
             <select name="nationality" id="nationality" onChange={(e)=>{
                             console.log('EVENT TARGET IN SIGNUP PAGE : ', e.target)
                             setNationality(e.target.value)
@@ -59,7 +59,10 @@ const greetings = () => {
                     return (<option key={i}
                         value={n}
                 >
-                    {n}
+                    {/* {n} */}
+                    {(n === 'en') && ('English')}
+                    {(n === 'de') && ('German')}
+                    {(n === 'fr') && ('French')}
                 </option>)
                 })}
             </select>
